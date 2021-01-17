@@ -2,6 +2,8 @@
 
 A ~~fully~~ featured competitive programming workspace in the cloud
 
+Deployed to Heroku: https://solve-web.herokuapp.com/
+
 ## Features
 - User Authentication
 - Parse contest problems
