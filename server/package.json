@@ -23,7 +23,6 @@
         "eslint": "^7.17.0",
         "prettier": "^2.2.1",
         "ts-node-dev": "^1.1.1",
-        "webpack-cli": "^4.3.1",
         "wepback": "^1.0.0"
     }
 }
