@@ -7,7 +7,7 @@ Deployed to Heroku: https://solve-web.herokuapp.com/
 ## Features
 - User Authentication
 - Parse contest problems
-- Share solutions
+- Share solutions (todo)
 - Upload code templates
 - Save workspace state
 - Run code against sample test cases before submitting

@@ -28,6 +28,8 @@ const express_1 = __importDefault(require("express"));
 const path_1 = __importDefault(require("path"));
 const admin = __importStar(require("firebase-admin"));
 exports.admin = admin;
+const dotenv_1 = __importDefault(require("dotenv"));
+dotenv_1.default.config();
 const users_1 = __importDefault(require("./src/routes/users"));
 const problems_1 = __importDefault(require("./src/routes/problems"));
 const workspaces_1 = __importDefault(require("./src/routes/workspaces"));
