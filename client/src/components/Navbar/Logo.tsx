@@ -2,14 +2,11 @@ import React from 'react';
 import { Box, Text } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 
-interface LogoProps {
-    w: string;
-    color: string[];
-}
+interface LogoProps {}
 
-const Logo: React.FC<LogoProps> = (props) => {
+const Logo: React.FC<LogoProps> = () => {
     return (
-        <Box {...props}>
+        <Box>
             <Link to="/">
                 <Text fontSize="lg" fontWeight="bold">
                     Solve

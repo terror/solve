@@ -10,8 +10,6 @@ const styles = {
         w: '100%',
         mb: 8,
         p: 8,
-        bg: ['primary.500', 'primary.500', 'transparent', 'transparent'],
-        color: ['black', 'black', 'primary.700', 'primary.700'],
     },
 };
 

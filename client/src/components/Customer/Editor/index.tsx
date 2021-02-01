@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { Wrap } from '@chakra-ui/react';
+import { useColorModeValue, Wrap } from '@chakra-ui/react';
 
 import EditorInformation from './Utils/EditorInformation';
 import EditorSettings from './Utils/EditorSettings';
@@ -16,9 +16,10 @@ interface EditorProps {}
 
 const Editor: React.FC<EditorProps> = () => {
     const [verdict, setVerdict] = useState('');
+    const bg = useColorModeValue('#EDF2F7', '#1B1E23');
     return (
         <div>
-            <Wrap display="flex" justifyContent="flex-end" backgroundColor="#EDF2F7" borderRadius="md">
+            <Wrap display="flex" justifyContent="flex-end" backgroundColor={bg} borderRadius="md">
                 <EditorTemplates/>
                 <EditorLang />
                 <EditorInformation />
@@ -27,7 +28,7 @@ const Editor: React.FC<EditorProps> = () => {
             </Wrap>
             <Ace />
             {verdict ? <Verdict desc={verdict}/> : null}
-            <Wrap backgroundColor="#EDF2F7" borderRadius="md">
+            <Wrap backgroundColor={bg} borderRadius="md">
                 <EditorRun setVerdict={setVerdict}/>
                 <EditorSend />
             </Wrap>

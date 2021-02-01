@@ -8,9 +8,12 @@ import {
     Button,
     StackItem,
     AspectRatio,
+    Icon,
 } from '@chakra-ui/react';
+
 import { Link } from 'react-router-dom';
 import { useAuth } from '../../providers/AuthProvider';
+import { AiOutlineLogin } from 'react-icons/ai';
 
 import Navbar from '../../components/Navbar';
 import Landing from '../../components/Customer/Landing';
@@ -34,24 +37,26 @@ const Home: React.FC<HomeProps> = () => {
             <Navbar />
             <Center>
                 {!currentUser ? (
-                    <Stack mt="10px">
-                        <StackItem alignSelf="center" mb={20}>
-                            <Heading as="h1" size="3xl" mb={2}>
-                                Solve
+                    <Stack mt="10px" textAlign="center">
+                        <StackItem alignSelf="center" mb={20} w="50%">
+                            <Heading as="h1" size="xl" mb={3}>
+                                The Competitive Programming Workspace.
                             </Heading>
-                            <Text>
-                                The fully featured competitive programming
-                                workspace in the cloud.
+                            <Text mb={3}>
+                                Solve let's you quickly spin up a programming
+                                workspace so you can focus on solving that
+                                problem and winning that contest.
                             </Text>
                             <Link to="/register">
                                 <Button {...styles.button}>
                                     Create a free account
+                                    <Icon ml={2} as={AiOutlineLogin} />
                                 </Button>
                             </Link>
                         </StackItem>
                         <StackItem mb={20}>
                             <Center>
-                                <Heading as="h1" size="2xl">
+                                <Heading as="h1" size="xl">
                                     Features
                                 </Heading>
                             </Center>
@@ -61,7 +66,7 @@ const Home: React.FC<HomeProps> = () => {
                         </StackItem>
                         <StackItem w="45%" alignSelf="center">
                             <Center>
-                                <Heading mb={5} as="h1" size="2xl">
+                                <Heading mb={5} as="h1" size="xl">
                                     Quick Demo
                                 </Heading>
                             </Center>

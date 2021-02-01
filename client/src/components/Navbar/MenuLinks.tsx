@@ -17,6 +17,7 @@ import {
 import { CgProfile } from 'react-icons/cg';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../../providers/AuthProvider';
+import { ColorModeSwitcher } from '../../ColorModeSwitcher';
 
 interface MenuLinksProps {
     isOpen: boolean;
@@ -92,6 +93,7 @@ const MenuLinks: React.FC<MenuLinksProps> = ({ isOpen }) => {
                 {...styles.stack}
                 direction={['column', 'row', 'row', 'row']}
             >
+                <ColorModeSwitcher/>
                 <MenuLink to="/">Home</MenuLink>
                 {!currentUser ? <MenuLink to="/login">Login</MenuLink> : null}
                 {currentUser ? (<MenuLink to="/dashboard">Dashboard</MenuLink>) : null}
