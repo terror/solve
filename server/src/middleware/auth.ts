@@ -1,4 +1,4 @@
-import { admin } from '../../index';
+import { admin } from '../db/config';
 import { Response, Request, NextFunction } from 'express';
 
 const getAuthToken = (req: Request, _: Response, next: NextFunction) => {
