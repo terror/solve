@@ -47,7 +47,7 @@ const MenuLink: React.FC<MenuLinkProps> = ({
 }: any) => {
     return (
         <Link to={to}>
-            <Text display="block" {...rest}>
+            <Text display="block" fontWeight="bold" {...rest}>
                 {children}
             </Text>
         </Link>
