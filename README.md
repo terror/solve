@@ -18,4 +18,7 @@ Deployed to Heroku: https://solve-web.herokuapp.com/
 - Firebase Auth for user authentication
 
 ## Development
-See: [client](https://github.com/terror/solve/tree/master/client) and [server](https://github.com/terror/solve/tree/master/server)
+See [CONTRIBUTING.md](https://github.com/terror/solve/tree/master/CONTRIBUTING.md) for more information.
+
+## License
+[MIT](https://github.com/terror/solve/tree/master/LICENSE)
