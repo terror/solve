@@ -8,19 +8,19 @@ import Workspaces from './Workspaces';
 interface LandingProps {}
 
 const Landing: React.FC<LandingProps> = () => {
-    return (
-        <Stack h={1000}>
-            <StackItem alignSelf="center">
-                <Heading mb={5} as="h3" size="lg">
-                    Upcoming contests
-                </Heading>
-            </StackItem>
-            <Contests />
-            <Center>
-                <Workspaces />
-            </Center>
-        </Stack>
-    );
+  return (
+    <Stack h={1000}>
+      <StackItem alignSelf='center'>
+        <Heading mb={5} as='h3' size='lg'>
+          Upcoming contests
+        </Heading>
+      </StackItem>
+      <Contests />
+      <Center>
+        <Workspaces />
+      </Center>
+    </Stack>
+  );
 };
 
 export default Landing;

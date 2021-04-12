@@ -13,22 +13,22 @@ import PrivateRoute from './components/PrivateRoute';
 import AuthProvider from './providers/AuthProvider';
 
 const App = () => {
-    return (
-        <AuthProvider>
-            <Router>
-                <Switch>
-                    <Route exact path="/" component={Home} />
-                    <Route path="/register" component={Register} />
-                    <Route path="/login" component={Login} />
-                    <Route path="/forgot" component={ForgotPassword} />
-                    <PrivateRoute path="/dashboard" component={Dashboard} />
-                    <PrivateRoute path="/profile" component={Profile} />
-                    <PrivateRoute path="/settings" component={Settings} />
-                    <Route component={NotFound} />
-                </Switch>
-            </Router>
-        </AuthProvider>
-    );
+  return (
+    <AuthProvider>
+      <Router>
+        <Switch>
+          <Route exact path='/' component={Home} />
+          <Route path='/register' component={Register} />
+          <Route path='/login' component={Login} />
+          <Route path='/forgot' component={ForgotPassword} />
+          <PrivateRoute path='/dashboard' component={Dashboard} />
+          <PrivateRoute path='/profile' component={Profile} />
+          <PrivateRoute path='/settings' component={Settings} />
+          <Route component={NotFound} />
+        </Switch>
+      </Router>
+    </AuthProvider>
+  );
 };
 
 export default App;

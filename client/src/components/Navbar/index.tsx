@@ -10,14 +10,14 @@ import Logo from './Logo';
 interface NavbarProps {}
 
 const Navbar: React.FC<NavbarProps> = () => {
-    const [isOpen, setIsOpen] = useState(false);
-    return (
-        <NavContainer>
-            <Logo />
-            <MenuToggle toggle={() => setIsOpen(!isOpen)} isOpen={isOpen} />
-            <MenuLinks isOpen={isOpen} />
-        </NavContainer>
-    );
+  const [isOpen, setIsOpen] = useState(false);
+  return (
+    <NavContainer>
+      <Logo />
+      <MenuToggle toggle={() => setIsOpen(!isOpen)} isOpen={isOpen} />
+      <MenuLinks isOpen={isOpen} />
+    </NavContainer>
+  );
 };
 
 export default Navbar;

@@ -4,9 +4,9 @@ import MenuToggle from './MenuToggle';
 interface HeaderProps {}
 
 const Header: React.FC<HeaderProps> = () => {
-    const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-    return <MenuToggle toggle={() => setIsOpen(!isOpen)} isOpen={isOpen} />;
+  return <MenuToggle toggle={() => setIsOpen(!isOpen)} isOpen={isOpen} />;
 };
 
 export default Header;

@@ -9,30 +9,28 @@ import { languageOptions } from '../../../../ts/languages';
 interface EditorLangProps {}
 
 const EditorLang: React.FC<EditorLangProps> = () => {
-    const { editorState, setEditorState }: any = useEditor();
+  const { editorState, setEditorState }: any = useEditor();
 
-    const handleChange = (e: React.SyntheticEvent<EventTarget>): void => {
-        setEditorState((prevState: IEditorSettings) => ({
-            ...prevState,
-            mode: languageOptions[(e.target as HTMLInputElement).value],
-        }));
-    };
+  const handleChange = (e: React.SyntheticEvent<EventTarget>): void => {
+    setEditorState((prevState: IEditorSettings) => ({
+      ...prevState,
+      mode: languageOptions[(e.target as HTMLInputElement).value],
+    }));
+  };
 
-    return (
-        <WrapItem>
-            <Select
-                variant="unstyled"
-                placeholder={findKey(languageOptions, editorState.mode)}
-                onChange={handleChange}
-            >
-                {Object.keys(languageOptions).map(
-                    (item: string, idx: number) => {
-                        return <option key={idx}>{item}</option>;
-                    }
-                )}
-            </Select>
-        </WrapItem>
-    );
+  return (
+    <WrapItem>
+      <Select
+        variant='unstyled'
+        placeholder={findKey(languageOptions, editorState.mode)}
+        onChange={handleChange}
+      >
+        {Object.keys(languageOptions).map((item: string, idx: number) => {
+          return <option key={idx}>{item}</option>;
+        })}
+      </Select>
+    </WrapItem>
+  );
 };
 
 export default EditorLang;

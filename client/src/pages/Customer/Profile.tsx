@@ -9,15 +9,15 @@ import Templates from '../../components/Customer/Profile/Templates';
 interface ProfileProps {}
 
 const Profile: React.FC<ProfileProps> = () => {
-    return (
-        <>
-            <Navbar />
-            <Welcome />
-            <Center mt={10}>
-                <Templates />
-            </Center>
-        </>
-    );
+  return (
+    <>
+      <Navbar />
+      <Welcome />
+      <Center mt={10}>
+        <Templates />
+      </Center>
+    </>
+  );
 };
 
 export default Profile;

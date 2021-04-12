@@ -15,25 +15,30 @@ import EditorTemplates from './Utils/EditorTemplates';
 interface EditorProps {}
 
 const Editor: React.FC<EditorProps> = () => {
-    const [verdict, setVerdict] = useState('');
-    const bg = useColorModeValue('#EDF2F7', '#1B1E23');
-    return (
-        <div>
-            <Wrap display="flex" justifyContent="flex-end" backgroundColor={bg} borderRadius="md">
-                <EditorTemplates/>
-                <EditorLang />
-                <EditorInformation />
-                <EditorSettings />
-                <EditorReset />
-            </Wrap>
-            <Ace />
-            {verdict ? <Verdict desc={verdict}/> : null}
-            <Wrap backgroundColor={bg} borderRadius="md">
-                <EditorRun setVerdict={setVerdict}/>
-                <EditorSend />
-            </Wrap>
-        </div>
-    );
+  const [verdict, setVerdict] = useState('');
+  const bg = useColorModeValue('#EDF2F7', '#1B1E23');
+  return (
+    <div>
+      <Wrap
+        display='flex'
+        justifyContent='flex-end'
+        backgroundColor={bg}
+        borderRadius='md'
+      >
+        <EditorTemplates />
+        <EditorLang />
+        <EditorInformation />
+        <EditorSettings />
+        <EditorReset />
+      </Wrap>
+      <Ace />
+      {verdict ? <Verdict desc={verdict} /> : null}
+      <Wrap backgroundColor={bg} borderRadius='md'>
+        <EditorRun setVerdict={setVerdict} />
+        <EditorSend />
+      </Wrap>
+    </div>
+  );
 };
 
 export default Editor;

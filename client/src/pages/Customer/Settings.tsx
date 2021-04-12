@@ -6,12 +6,12 @@ import SettingsForm from '../../components/Customer/Settings/SettingsForm';
 interface SettingsProps {}
 
 const Settings: React.FC<SettingsProps> = () => {
-    return (
-        <>
-            <Navbar />
-            <SettingsForm />
-        </>
-    );
+  return (
+    <>
+      <Navbar />
+      <SettingsForm />
+    </>
+  );
 };
 
 export default Settings;
