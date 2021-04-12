@@ -10639,6 +10639,13 @@ react-style-singleton@^2.1.0:
     invariant "^2.2.4"
     tslib "^1.0.0"
 
+react-wavify@^1.5.2:
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/react-wavify/-/react-wavify-1.5.2.tgz#02a26b335414d0e008cd4f6c0ab15dd97af5ba88"
+  integrity sha512-Xf7zC+6DyitUbNQsAMrSN6DygN90DrzQB20ecgLpiSoBqyUgUM3DbYvCTk5re7azvwT9EANq+awyk2KNCr4oEg==
+  dependencies:
+    prop-types "^15.7.2"
+
 react@^17.0.1:
   version "17.0.1"
   resolved "https://registry.yarnpkg.com/react/-/react-17.0.1.tgz#6e0600416bd57574e3f86d92edba3d9008726127"

@@ -6,6 +6,7 @@ import NavContainer from './NavContainer';
 import MenuToggle from './MenuToggle';
 import MenuLinks from './MenuLinks';
 import Logo from './Logo';
+import { Divider } from '@chakra-ui/layout';
 
 interface NavbarProps {}
 
@@ -16,6 +17,7 @@ const Navbar: React.FC<NavbarProps> = () => {
       <Logo />
       <MenuToggle toggle={() => setIsOpen(!isOpen)} isOpen={isOpen} />
       <MenuLinks isOpen={isOpen} />
+      <Divider mt={5} />
     </NavContainer>
   );
 };

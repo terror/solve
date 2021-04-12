@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import * as Yup from 'yup';
 
-import { Center, Stack, Heading, Button, Wrap } from '@chakra-ui/react';
+import { Center, Stack, Heading, Button, StackItem } from '@chakra-ui/react';
 
 import { Formik, FormikProps, Form, Field } from 'formik';
 import { Link, useHistory } from 'react-router-dom';
@@ -29,52 +29,57 @@ const ForgotPassword: React.FC<ForgotPasswordProps> = () => {
 
   return (
     <Center>
-      <Stack {...styles.stack}>
-        <Heading {...styles.heading}>Password Reset</Heading>
-        {error ? <Error msg={error} /> : null}
-        <Formik
-          initialValues={initialValues}
-          validationSchema={Yup.object({
-            email: Yup.string()
-              .email('Invalid email address.')
-              .required('Required'),
-          })}
-          onSubmit={async (data, { setSubmitting }) => {
-            try {
-              passwordReset(data.email);
-            } catch {
-              setError('Failed to reset password.');
-            }
-            setSubmitting(false);
-          }}
-        >
-          {(props: FormikProps<any>) => (
-            <Form>
-              <Field name='email' type='email'>
-                {({ field, form }: any) => (
-                  <TextField
-                    field={field}
-                    errors={form.errors.email}
-                    touched={form.touched.email}
-                    name='Email'
-                  />
-                )}
-              </Field>
-              <Button
-                mt={5}
-                mb={5}
-                colorScheme='green'
-                isLoading={props.isSubmitting}
-                type='submit'
-              >
-                Reset
-              </Button>
-            </Form>
-          )}
-        </Formik>
-        <Wrap {...styles.wrap}>
+      <Stack>
+        <StackItem alignSelf='center'>
+          <Heading {...styles.heading}>Reset your password</Heading>
+        </StackItem>
+        <StackItem alignSelf='center' mb={5}>
           <Link to='/login'>Back to Login</Link>
-        </Wrap>
+        </StackItem>
+        <Stack {...styles.stack}>
+          {error ? <Error msg={error} /> : null}
+          <Formik
+            initialValues={initialValues}
+            validationSchema={Yup.object({
+              email: Yup.string()
+                .email('Invalid email address.')
+                .required('Required'),
+            })}
+            onSubmit={async (data, { setSubmitting }) => {
+              try {
+                passwordReset(data.email);
+              } catch {
+                setError('Failed to reset password.');
+              }
+              setSubmitting(false);
+            }}
+          >
+            {(props: FormikProps<any>) => (
+              <Form style={{ padding: '20px' }}>
+                <Field name='email' type='email'>
+                  {({ field, form }: any) => (
+                    <TextField
+                      field={field}
+                      errors={form.errors.email}
+                      touched={form.touched.email}
+                      name='Email'
+                    />
+                  )}
+                </Field>
+                <Button
+                  mt={5}
+                  mb={5}
+                  colorScheme='blue'
+                  width='100%'
+                  isLoading={props.isSubmitting}
+                  type='submit'
+                >
+                  Reset
+                </Button>
+              </Form>
+            )}
+          </Formik>
+        </Stack>
       </Stack>
     </Center>
   );

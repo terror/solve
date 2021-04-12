@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import * as Yup from 'yup';
 
-import { Heading, Center, Stack, Button, Wrap } from '@chakra-ui/react';
+import { Heading, Center, Stack, Button, StackItem } from '@chakra-ui/react';
 
 import { Formik, Form, Field, FormikProps } from 'formik';
 import { Link, useHistory } from 'react-router-dom';
@@ -31,80 +31,85 @@ const Register: React.FC<RegisterProps> = () => {
 
   return (
     <Center>
-      <Stack {...styles.stack}>
-        <Heading {...styles.heading}>Register</Heading>
-        {error ? <Error msg={error} /> : null}
-        <Formik
-          initialValues={initialValues}
-          validationSchema={Yup.object({
-            name: Yup.string()
-              .max(30, 'Name must be 30 characters or less.')
-              .required('Required'),
-            email: Yup.string()
-              .email('Invalid email address.')
-              .required('Required'),
-            password: Yup.string()
-              .max(50, 'Password must be 50 characters or less.')
-              .required('Required'),
-          })}
-          onSubmit={async (data, { setSubmitting }) => {
-            try {
-              setError('');
-              await signup(data.email, data.password);
-              history.push('/dashboard');
-            } catch {
-              setError('Failed to register');
-            }
-            setSubmitting(false);
-          }}
-        >
-          {(props: FormikProps<any>) => (
-            <Form>
-              <Field name='name' type='text'>
-                {({ field, form }: any) => (
-                  <TextField
-                    field={field}
-                    errors={form.errors.name}
-                    touched={form.touched.name}
-                    name='Name'
-                  ></TextField>
-                )}
-              </Field>
-              <Field name='email' type='email'>
-                {({ field, form }: any) => (
-                  <TextField
-                    field={field}
-                    errors={form.errors.email}
-                    touched={form.touched.email}
-                    name='Email'
-                  ></TextField>
-                )}
-              </Field>
-              <Field name='password' type='password'>
-                {({ field, form }: any) => (
-                  <TextField
-                    field={field}
-                    errors={form.errors.password}
-                    touched={form.touched.password}
-                    name='Password'
-                  />
-                )}
-              </Field>
-              <Button
-                mt={5}
-                mb={7}
-                colorScheme='green'
-                isLoading={props.isSubmitting}
-                type='submit'
-              >
-                Submit
-              </Button>
-            </Form>
-          )}
-        </Formik>
-        <Wrap {...styles.wrap}>
+      <Stack>
+        <StackItem alignSelf='center'>
+          <Heading {...styles.heading}>Sign up for an account</Heading>
+        </StackItem>
+        <StackItem alignSelf='center' mb={5}>
           <Link to='/login'>Already have an account?</Link>
-        </Wrap>
+        </StackItem>
+        <Stack {...styles.stack}>
+          {error ? <Error msg={error} /> : null}
+          <Formik
+            initialValues={initialValues}
+            validationSchema={Yup.object({
+              name: Yup.string()
+                .max(30, 'Name must be 30 characters or less.')
+                .required('Required'),
+              email: Yup.string()
+                .email('Invalid email address.')
+                .required('Required'),
+              password: Yup.string()
+                .max(50, 'Password must be 50 characters or less.')
+                .required('Required'),
+            })}
+            onSubmit={async (data, { setSubmitting }) => {
+              try {
+                setError('');
+                await signup(data.email, data.password);
+                history.push('/dashboard');
+              } catch {
+                setError('Failed to register');
+              }
+              setSubmitting(false);
+            }}
+          >
+            {(props: FormikProps<any>) => (
+              <Form style={{ padding: '20px' }}>
+                <Field name='name' type='text'>
+                  {({ field, form }: any) => (
+                    <TextField
+                      field={field}
+                      errors={form.errors.name}
+                      touched={form.touched.name}
+                      name='Name'
+                    ></TextField>
+                  )}
+                </Field>
+                <Field name='email' type='email'>
+                  {({ field, form }: any) => (
+                    <TextField
+                      field={field}
+                      errors={form.errors.email}
+                      touched={form.touched.email}
+                      name='Email'
+                    ></TextField>
+                  )}
+                </Field>
+                <Field name='password' type='password'>
+                  {({ field, form }: any) => (
+                    <TextField
+                      field={field}
+                      errors={form.errors.password}
+                      touched={form.touched.password}
+                      name='Password'
+                    />
+                  )}
+                </Field>
+                <Button
+                  mt={5}
+                  mb={7}
+                  width='100%'
+                  colorScheme='blue'
+                  isLoading={props.isSubmitting}
+                  type='submit'
+                >
+                  Sign up
+                </Button>
+              </Form>
+            )}
+          </Formik>
+        </Stack>
       </Stack>
     </Center>
   );

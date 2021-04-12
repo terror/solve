@@ -118,7 +118,7 @@ const TemplateAdd: React.FC<TemplateAddProps> = () => {
                   <Button
                     mt={5}
                     mb={5}
-                    colorScheme='green'
+                    colorScheme='blue'
                     isLoading={props.isSubmitting}
                     type='submit'
                   >
