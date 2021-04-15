@@ -15,6 +15,7 @@ import {
   FormLabel,
   Select,
   WrapItem,
+  Tooltip,
 } from '@chakra-ui/react';
 import { SettingsIcon } from '@chakra-ui/icons';
 import { useEditor } from '../../../../providers/EditorProvider';
@@ -34,9 +35,9 @@ const EditorSettingsForm: React.FC<EditorSettingsFormProps> = () => {
   return (
     <FormControl>
       <div style={{ marginBottom: '10px' }}>
-        <FormLabel>Current Theme: {editorState.theme}</FormLabel>
+        <FormLabel>Theme</FormLabel>
         <Select
-          placeholder='Select Theme'
+          value={editorState.theme}
           onChange={(e) =>
             setEditorState((prevState: any) => ({
               ...prevState,
@@ -50,9 +51,9 @@ const EditorSettingsForm: React.FC<EditorSettingsFormProps> = () => {
         </Select>
       </div>
       <div style={{ marginBottom: '10px' }}>
-        <FormLabel>Current Font Size: {editorState.fontSize}</FormLabel>
+        <FormLabel>Font Size</FormLabel>
         <Select
-          placeholder='Select Font Size'
+          value={editorState.fontSize}
           onChange={(e) =>
             setEditorState((prevState: any) => ({
               ...prevState,
@@ -66,11 +67,9 @@ const EditorSettingsForm: React.FC<EditorSettingsFormProps> = () => {
         </Select>
       </div>
       <div style={{ marginBottom: '10px' }}>
-        <FormLabel>
-          Current Keybindings: {editorState.keyboardHandler}
-        </FormLabel>
+        <FormLabel>Keybindings</FormLabel>
         <Select
-          placeholder='Select Keybindings'
+          value={editorState.keyboardHandler}
           onChange={(e) =>
             setEditorState((prevState: any) => ({
               ...prevState,
@@ -87,14 +86,15 @@ const EditorSettingsForm: React.FC<EditorSettingsFormProps> = () => {
   );
 };
 
-const EditorSettings: React.FC<EditorSettingsProps> = (props) => {
+const EditorSettings: React.FC<EditorSettingsProps> = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <WrapItem>
-      <Button onClick={onOpen}>
-        <Icon as={SettingsIcon} />
-      </Button>
-
+      <Tooltip label='Settings'>
+        <Button variant='ghost' onClick={onOpen}>
+          <Icon as={SettingsIcon} />
+        </Button>
+      </Tooltip>
       <Modal blockScrollOnMount={true} isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
@@ -104,7 +104,7 @@ const EditorSettings: React.FC<EditorSettingsProps> = (props) => {
             <EditorSettingsForm />
           </ModalBody>
           <ModalFooter>
-            <Button colorScheme='green' m={2} onClick={onClose}>
+            <Button isFullWidth colorScheme='blue' onClick={onClose}>
               Close
             </Button>
           </ModalFooter>

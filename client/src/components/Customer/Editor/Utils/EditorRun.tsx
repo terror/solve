@@ -108,7 +108,7 @@ const EditorRun: React.FC<EditorRunProps> = ({ setVerdict }) => {
   return (
     <WrapItem>
       {loading ? <Progress size='xs' isIndeterminate /> : null}
-      <Button onClick={handleClick} isLoading={loading}>
+      <Button variant='ghost' onClick={handleClick} isLoading={loading}>
         <Icon as={VscRunAll}></Icon>
         <Text fontSize='sm' ml={3}>
           Run code

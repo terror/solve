@@ -14,6 +14,7 @@ import {
   ModalFooter,
   Text,
   WrapItem,
+  Tooltip,
 } from '@chakra-ui/react';
 
 import { useEditor } from '../../../../providers/EditorProvider';
@@ -34,10 +35,11 @@ const EditorReset: React.FC<EditorResetProps> = () => {
 
   return (
     <WrapItem>
-      <Button onClick={onOpen}>
-        <Icon as={RepeatClockIcon} />
-      </Button>
-
+      <Tooltip label='Reset'>
+        <Button variant='ghost' onClick={onOpen}>
+          <Icon as={RepeatClockIcon} />
+        </Button>
+      </Tooltip>
       <Modal blockScrollOnMount={true} isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
@@ -49,7 +51,7 @@ const EditorReset: React.FC<EditorResetProps> = () => {
             </Text>
           </ModalBody>
           <ModalFooter>
-            <Button onClick={handleClick} colorScheme='red' mr={3}>
+            <Button onClick={handleClick} isFullWidth colorScheme='red'>
               Reset
             </Button>
           </ModalFooter>
