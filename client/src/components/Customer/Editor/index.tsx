@@ -3,14 +3,15 @@ import React, { useState } from 'react';
 import { useColorModeValue, Wrap } from '@chakra-ui/react';
 
 import EditorInformation from './Utils/EditorInformation';
-import EditorSettings from './Utils/EditorSettings';
+import EditorLang from './Utils/EditorLang';
 import EditorReset from './Utils/EditorReset';
 import EditorRun from './Utils/EditorRun';
+import EditorSave from './Utils/EditorSave';
 import EditorSend from './Utils/EditorSend';
-import EditorLang from './Utils/EditorLang';
+import EditorSettings from './Utils/EditorSettings';
+import EditorTemplates from './Utils/EditorTemplates';
 import Verdict from './Utils/Verdict';
 import Ace from './Ace';
-import EditorTemplates from './Utils/EditorTemplates';
 
 interface EditorProps {}
 
@@ -25,11 +26,12 @@ const Editor: React.FC<EditorProps> = () => {
         backgroundColor={bg}
         borderRadius='md'
       >
-        <EditorTemplates />
         <EditorLang />
+        <EditorTemplates />
         <EditorInformation />
         <EditorSettings />
         <EditorReset />
+        <EditorSave />
       </Wrap>
       <Ace />
       {verdict ? <Verdict desc={verdict} /> : null}

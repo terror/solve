@@ -6,7 +6,6 @@ import Problem from '../../components/Customer/Problem';
 import EditorProvider from '../../providers/EditorProvider';
 import ProblemProvider from '../../providers/ProblemProvider';
 import SplitPane from 'react-split-pane';
-import WorkspaceSave from '../../components/Customer/Dashboard/WorkspaceSave';
 
 interface DashboardProps {}
 
@@ -28,7 +27,6 @@ const Dashboard: React.FC<DashboardProps> = () => {
           <Editor />
         </EditorProvider>
       </SplitPane>
-      <WorkspaceSave />
     </div>
   );
 };

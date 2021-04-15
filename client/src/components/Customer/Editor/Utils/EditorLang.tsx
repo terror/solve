@@ -3,8 +3,8 @@ import React from 'react';
 import { useEditor } from '../../../../providers/EditorProvider';
 import { IEditorSettings } from '../../../../ts/interfaces';
 import { Select, WrapItem } from '@chakra-ui/react';
-import { findKey } from '../../../../ts/utils';
 import { languageOptions } from '../../../../ts/languages';
+import { findKey } from '../../../../ts/utils';
 
 interface EditorLangProps {}
 
@@ -22,8 +22,10 @@ const EditorLang: React.FC<EditorLangProps> = () => {
     <WrapItem>
       <Select
         variant='unstyled'
-        placeholder={findKey(languageOptions, editorState.mode)}
         onChange={handleChange}
+        value={findKey(languageOptions, editorState.mode)}
+        size='sm'
+        alignSelf='center'
       >
         {Object.keys(languageOptions).map((item: string, idx: number) => {
           return <option key={idx}>{item}</option>;

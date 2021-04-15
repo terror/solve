@@ -32,7 +32,7 @@ export const EditorSend: React.FC<EditorSendProps> = () => {
   return (
     <WrapItem>
       {error ? <Error msg={error} /> : null}
-      <Button onClick={handleClick}>
+      <Button variant='ghost' onClick={handleClick}>
         <Icon as={RiMailSendFill} />
         <Text fontSize='sm' ml={3}>
           Submit

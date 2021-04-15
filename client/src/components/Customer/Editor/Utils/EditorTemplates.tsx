@@ -1,18 +1,46 @@
 import React, { useEffect, useState } from 'react';
 
-import { Select, WrapItem } from '@chakra-ui/react';
+import {
+  WrapItem,
+  Button,
+  Tooltip,
+  Icon,
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  ModalOverlay,
+  useDisclosure,
+  Container,
+  Wrap,
+  Popover,
+  PopoverArrow,
+  PopoverBody,
+  PopoverCloseButton,
+  PopoverContent,
+  PopoverHeader,
+  PopoverTrigger,
+  Link,
+} from '@chakra-ui/react';
+
 import { ITemplate, IEditorSettings } from '../../../../ts/interfaces';
 import { api } from '../../../../ts/api';
 import { useAuth } from '../../../../providers/AuthProvider';
 import { useEditor } from '../../../../providers/EditorProvider';
 import { languageOptions } from '../../../../ts/languages';
+import { HiCode } from 'react-icons/hi';
+import { AiOutlineCloudUpload } from 'react-icons/ai';
+import SyntaxHighlighter from 'react-syntax-highlighter';
 
 interface EditorTemplatesProps {}
 
 const EditorTemplates: React.FC<EditorTemplatesProps> = () => {
-  const [templates, setTemplates] = useState<ITemplate[]>([]);
+  const { isOpen, onOpen, onClose } = useDisclosure();
   const { currentUser }: any = useAuth();
   const { setEditorState }: any = useEditor();
+  const [templates, setTemplates] = useState<ITemplate[]>([]);
 
   useEffect(() => {
     api.get(`/templates/${currentUser.uid}`).then((res) => {
@@ -20,32 +48,66 @@ const EditorTemplates: React.FC<EditorTemplatesProps> = () => {
     });
   }, [currentUser.uid]);
 
-  const handleChange = (e: any): void => {
-    const selectedIndex = e.target.options.selectedIndex;
-    setEditorState((prevState: IEditorSettings) => ({
-      ...prevState,
-      value: e.target.value,
-      mode:
-        languageOptions[e.target.options[selectedIndex].getAttribute('lang')],
-    }));
-  };
-
   return (
     <WrapItem>
-      <Select
-        mr={2}
-        variant='unstyled'
-        placeholder='Select Template'
-        onChange={handleChange}
-      >
-        {templates.map((item: ITemplate, idx: number) => {
-          return (
-            <option key={idx} value={item.body} lang={item.lang}>
-              {item.name}
-            </option>
-          );
-        })}
-      </Select>
+      <Tooltip label='Templates'>
+        <Button variant='ghost' onClick={onOpen}>
+          <Icon as={HiCode} />
+        </Button>
+      </Tooltip>
+      <Modal blockScrollOnMount={true} isOpen={isOpen} onClose={onClose}>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>Templates</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            {templates.map((item: ITemplate, idx: number) => {
+              return (
+                <Container key={idx} mb={5}>
+                  <Wrap align='center'>
+                    <WrapItem>
+                      <Popover isLazy>
+                        <PopoverTrigger>
+                          <Link>{item.name}</Link>
+                        </PopoverTrigger>
+                        <PopoverContent>
+                          <PopoverArrow />
+                          <PopoverCloseButton />
+                          <PopoverHeader>{item.name}</PopoverHeader>
+                          <PopoverBody>
+                            <SyntaxHighlighter language={item.lang}>
+                              {item.body}
+                            </SyntaxHighlighter>
+                          </PopoverBody>
+                        </PopoverContent>
+                      </Popover>
+                    </WrapItem>
+                    <WrapItem>
+                      <Button
+                        variant='ghost'
+                        onClick={() => {
+                          setEditorState((prevState: IEditorSettings) => ({
+                            ...prevState,
+                            value: item.body,
+                            mode: languageOptions[item.lang],
+                          }));
+                        }}
+                      >
+                        <Icon as={AiOutlineCloudUpload} />
+                      </Button>
+                    </WrapItem>
+                  </Wrap>
+                </Container>
+              );
+            })}
+          </ModalBody>
+          <ModalFooter>
+            <Button isFullWidth colorScheme='blue' onClick={onClose}>
+              Close
+            </Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
     </WrapItem>
   );
 };

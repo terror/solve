@@ -12,6 +12,7 @@ import {
   ModalFooter,
   Text,
   WrapItem,
+  Tooltip,
 } from '@chakra-ui/react';
 import { InfoIcon } from '@chakra-ui/icons';
 
@@ -21,10 +22,11 @@ const EditorInformation: React.FC<EditorInformationProps> = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <WrapItem>
-      <Button onClick={onOpen}>
-        <Icon as={InfoIcon} />
-      </Button>
-
+      <Tooltip label='Information'>
+        <Button variant='ghost' onClick={onOpen}>
+          <Icon as={InfoIcon} />
+        </Button>
+      </Tooltip>
       <Modal blockScrollOnMount={true} isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
@@ -34,7 +36,7 @@ const EditorInformation: React.FC<EditorInformationProps> = () => {
             <Text mb='1rem'>TBA</Text>
           </ModalBody>
           <ModalFooter>
-            <Button colorScheme='green' m={2} onClick={onClose}>
+            <Button colorScheme='blue' isFullWidth onClick={onClose}>
               Close
             </Button>
           </ModalFooter>
