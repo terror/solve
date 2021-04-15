@@ -2,3 +2,4 @@ node_modules/
 /server/.firebaserc
 /client/.env
 /server/.env
+/client/.eslintcache

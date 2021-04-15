@@ -120,6 +120,7 @@ const TemplateAdd: React.FC<TemplateAddProps> = () => {
                     mb={5}
                     colorScheme='blue'
                     isLoading={props.isSubmitting}
+                    isFullWidth
                     type='submit'
                   >
                     Save

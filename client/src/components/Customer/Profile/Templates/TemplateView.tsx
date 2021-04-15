@@ -10,11 +10,11 @@ import {
   ModalCloseButton,
   ModalBody,
   ModalFooter,
-  Code,
   Icon,
 } from '@chakra-ui/react';
 
 import Error from '../../../Error';
+import SyntaxHighlighter from 'react-syntax-highlighter';
 
 import { ITemplate } from '../../../../ts/interfaces';
 import { api } from '../../../../ts/api';
@@ -56,9 +56,7 @@ const TemplateView: React.FC<TemplateViewProps> = ({ item }) => {
           <ModalCloseButton />
           <ModalBody>
             {error ? <Error msg={error} /> : null}
-            <Code w='100%' borderRadius='md' whiteSpace='pre-wrap'>
-              {item.body}
-            </Code>
+            <SyntaxHighlighter lang={item.lang}>{item.body}</SyntaxHighlighter>
           </ModalBody>
           <ModalFooter>
             <Button mr={3} onClick={handleClick}>
