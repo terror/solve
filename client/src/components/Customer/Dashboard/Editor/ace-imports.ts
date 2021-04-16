@@ -18,4 +18,4 @@ import 'ace-builds/src-min-noconflict/ext-language_tools';
 import 'ace-builds/src-min-noconflict/ext-searchbox';
 
 // Styling
-import '../../../Edit.css';
+import '../../../../Edit.css';

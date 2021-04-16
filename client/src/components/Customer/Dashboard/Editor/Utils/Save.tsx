@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { api } from '../../../../ts/api';
+import { api } from '../../../../../ts/api';
 
 import {
   Alert,
@@ -17,9 +17,13 @@ import {
   useDisclosure,
 } from '@chakra-ui/react';
 
-import { IProblem, IEditorSettings } from '../../../../ts/interfaces';
-import { useAuth } from '../../../../providers/AuthProvider';
-import { SUCCESS, INTERNAL_ERROR, NOT_FOUND } from '../../../../ts/constants';
+import { IProblem, IEditorSettings } from '../../../../../ts/interfaces';
+import { useAuth } from '../../../../../providers/AuthProvider';
+import {
+  SUCCESS,
+  INTERNAL_ERROR,
+  NOT_FOUND,
+} from '../../../../../ts/constants';
 import { AiFillSave } from 'react-icons/ai';
 
 interface WorkspaceSaveProps {}

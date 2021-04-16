@@ -18,9 +18,9 @@ import {
   Text,
 } from '@chakra-ui/react';
 
-import { useProblem } from '../../../providers/ProblemProvider';
+import { useProblem } from '../../../../providers/ProblemProvider';
 import { AiOutlineLink } from 'react-icons/ai';
-import { Test } from '../../../ts/interfaces';
+import { Test } from '../../../../ts/interfaces';
 
 interface WindowProps {}
 

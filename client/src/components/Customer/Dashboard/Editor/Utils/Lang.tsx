@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { useEditor } from '../../../../providers/EditorProvider';
-import { IEditorSettings } from '../../../../ts/interfaces';
+import { useEditor } from '../../../../../providers/EditorProvider';
+import { IEditorSettings } from '../../../../../ts/interfaces';
 import { Select, WrapItem } from '@chakra-ui/react';
-import { languageOptions } from '../../../../ts/languages';
-import { findKey } from '../../../../ts/utils';
+import { languageOptions } from '../../../../../ts/languages';
+import { findKey } from '../../../../../ts/utils';
 
 interface EditorLangProps {}
 

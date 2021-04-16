@@ -8,9 +8,9 @@ import {
   IProblem,
   Submission,
   Test,
-} from '../../../../ts/interfaces';
-import { judge } from '../../../../ts/api';
-import { languages } from '../../../../ts/languages';
+} from '../../../../../ts/interfaces';
+import { judge } from '../../../../../ts/api';
+import { languages } from '../../../../../ts/languages';
 
 interface EditorRunProps {
   setVerdict: Function;

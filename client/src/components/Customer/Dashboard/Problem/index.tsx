@@ -11,13 +11,13 @@ import {
   Center,
 } from '@chakra-ui/react';
 
-import { useProblem } from '../../../providers/ProblemProvider';
-import { IProblem } from '../../../ts/interfaces';
-import { api } from '../../../ts/api';
+import { useProblem } from '../../../../providers/ProblemProvider';
+import { IProblem } from '../../../../ts/interfaces';
+import { api } from '../../../../ts/api';
 
 import Window from './Window';
-import Error from '../../Error';
-import useWindowSize from '../../../hooks/useWindowSize';
+import Error from '../../../Error';
+import useWindowSize from '../../../../hooks/useWindowSize';
 
 interface ProblemProps {}
 

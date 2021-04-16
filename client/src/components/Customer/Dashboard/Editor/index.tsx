@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 
 import { useColorModeValue, Wrap } from '@chakra-ui/react';
 
-import EditorInformation from './Utils/EditorInformation';
-import EditorLang from './Utils/EditorLang';
-import EditorReset from './Utils/EditorReset';
-import EditorRun from './Utils/EditorRun';
-import EditorSave from './Utils/EditorSave';
-import EditorSend from './Utils/EditorSend';
-import EditorSettings from './Utils/EditorSettings';
-import EditorTemplates from './Utils/EditorTemplates';
+import EditorInformation from './Utils/Info';
+import EditorLang from './Utils/Lang';
+import EditorReset from './Utils/Reset';
+import EditorRun from './Utils/Run';
+import EditorSave from './Utils/Save';
+import EditorSend from './Utils/Send';
+import EditorSettings from './Utils/Settings';
+import EditorTemplates from './Utils/Templates';
 import Verdict from './Utils/Verdict';
 import Ace from './Ace';
 

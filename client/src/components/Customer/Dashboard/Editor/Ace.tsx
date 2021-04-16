@@ -3,8 +3,8 @@ import React from 'react';
 import AceEditor from 'react-ace';
 import './ace-imports';
 
-import { useEditor } from '../../../providers/EditorProvider';
-import useWindowSize from '../../../hooks/useWindowSize';
+import { useEditor } from '../../../../providers/EditorProvider';
+import useWindowSize from '../../../../hooks/useWindowSize';
 
 interface AceProps {}
 
