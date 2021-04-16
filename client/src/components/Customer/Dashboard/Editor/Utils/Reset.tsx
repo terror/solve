@@ -17,8 +17,8 @@ import {
   Tooltip,
 } from '@chakra-ui/react';
 
-import { useEditor } from '../../../../providers/EditorProvider';
-import { IEditorSettings } from '../../../../ts/interfaces';
+import { useEditor } from '../../../../../providers/EditorProvider';
+import { IEditorSettings } from '../../../../../ts/interfaces';
 
 interface EditorResetProps {}
 

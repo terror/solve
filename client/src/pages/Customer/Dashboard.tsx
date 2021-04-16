@@ -1,8 +1,8 @@
 import React from 'react';
 
 import Navbar from '../../components/Navbar';
-import Editor from '../../components/Customer/Editor';
-import Problem from '../../components/Customer/Problem';
+import Editor from '../../components/Customer/Dashboard/Editor';
+import Problem from '../../components/Customer/Dashboard/Problem';
 import EditorProvider from '../../providers/EditorProvider';
 import ProblemProvider from '../../providers/ProblemProvider';
 import SplitPane from 'react-split-pane';

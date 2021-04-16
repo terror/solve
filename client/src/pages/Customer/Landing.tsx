@@ -2,8 +2,8 @@ import React from 'react';
 
 import { Center, Heading, Stack, StackItem } from '@chakra-ui/react';
 
-import Contests from './Contests';
-import Workspaces from './Workspaces';
+import Contests from '../../components/Customer/Landing/Contests';
+import Workspaces from '../../components/Customer/Landing/Workspaces';
 
 interface LandingProps {}
 

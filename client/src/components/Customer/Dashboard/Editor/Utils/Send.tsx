@@ -3,9 +3,9 @@ import React, { useState } from 'react';
 import { Icon, Button, Text, WrapItem } from '@chakra-ui/react';
 import { RiMailSendFill } from 'react-icons/ri';
 
-import { IProblem, IEditorSettings } from '../../../../ts/interfaces';
+import { IProblem, IEditorSettings } from '../../../../../ts/interfaces';
 
-import Error from '../../../../components/Error';
+import Error from '../../../../Error';
 
 interface EditorSendProps {}
 

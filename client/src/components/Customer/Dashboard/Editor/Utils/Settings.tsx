@@ -18,7 +18,7 @@ import {
   Tooltip,
 } from '@chakra-ui/react';
 import { SettingsIcon } from '@chakra-ui/icons';
-import { useEditor } from '../../../../providers/EditorProvider';
+import { useEditor } from '../../../../../providers/EditorProvider';
 
 const options = {
   theme: ['monokai', 'github', 'eclipse'],

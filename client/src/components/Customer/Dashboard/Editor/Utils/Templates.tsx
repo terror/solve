@@ -25,11 +25,11 @@ import {
   Link,
 } from '@chakra-ui/react';
 
-import { ITemplate, IEditorSettings } from '../../../../ts/interfaces';
-import { api } from '../../../../ts/api';
-import { useAuth } from '../../../../providers/AuthProvider';
-import { useEditor } from '../../../../providers/EditorProvider';
-import { languageOptions } from '../../../../ts/languages';
+import { ITemplate, IEditorSettings } from '../../../../../ts/interfaces';
+import { api } from '../../../../../ts/api';
+import { useAuth } from '../../../../../providers/AuthProvider';
+import { useEditor } from '../../../../../providers/EditorProvider';
+import { languageOptions } from '../../../../../ts/languages';
 import { HiCode } from 'react-icons/hi';
 import { AiOutlineCloudUpload } from 'react-icons/ai';
 import SyntaxHighlighter from 'react-syntax-highlighter';

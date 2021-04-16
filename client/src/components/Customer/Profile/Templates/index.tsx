@@ -18,8 +18,8 @@ import { api } from '../../../../ts/api';
 import { useAuth } from '../../../../providers/AuthProvider';
 import { ITemplate } from '../../../../ts/interfaces';
 
-import TemplateAdd from './TemplateAdd';
-import TemplateView from './TemplateView';
+import TemplateAdd from './Add';
+import TemplateView from './View';
 
 interface TemplatesProps {}
 

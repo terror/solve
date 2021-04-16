@@ -15,12 +15,12 @@ import {
 import { AiFillFileAdd } from 'react-icons/ai';
 import { Formik, FormikProps, Form, Field } from 'formik';
 import { useAuth } from '../../../../providers/AuthProvider';
-import { api } from '../.././../../ts/api';
+import { api } from '../../../../ts/api';
 
 import TextField from '../../../Auth/TextField';
 import TextAreaField from '../../../Auth/TextAreaField';
 import SelectField from '../../../Auth/SelectField';
-import Error from '../../../../components/Error';
+import Error from '../../../Error';
 
 interface TemplateAddProps {}
 

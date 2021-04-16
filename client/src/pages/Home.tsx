@@ -12,12 +12,12 @@ import {
 } from '@chakra-ui/react';
 
 import { Link } from 'react-router-dom';
-import { useAuth } from '../../providers/AuthProvider';
+import { useAuth } from '../providers/AuthProvider';
 import { AiOutlineLogin } from 'react-icons/ai';
 
-import Navbar from '../../components/Navbar';
-import Landing from '../../components/Customer/Landing';
-import Features from './Features';
+import Navbar from '../components/Navbar';
+import Landing from './Customer/Landing';
+import Features from '../components/Home/Features';
 import Wave from 'react-wavify';
 
 interface HomeProps {}
