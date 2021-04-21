@@ -1,6 +1,5 @@
 import React from 'react';
 
-import Navbar from '../../components/Navbar';
 import Editor from '../../components/Customer/Dashboard/Editor';
 import Problem from '../../components/Customer/Dashboard/Problem';
 import EditorProvider from '../../providers/EditorProvider';
@@ -12,7 +11,6 @@ interface DashboardProps {}
 const Dashboard: React.FC<DashboardProps> = () => {
   return (
     <div>
-      <Navbar />
       <SplitPane
         style={{ position: 'relative' }}
         split='vertical'

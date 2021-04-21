@@ -11,11 +11,13 @@ import Profile from './pages/Customer/Profile';
 import Settings from './pages/Customer/Settings';
 import PrivateRoute from './components/PrivateRoute';
 import AuthProvider from './providers/AuthProvider';
+import Navbar from './components/Navbar';
 
 const App = () => {
   return (
     <AuthProvider>
       <Router>
+        <Navbar />
         <Switch>
           <Route exact path='/' component={Home} />
           <Route path='/register' component={Register} />

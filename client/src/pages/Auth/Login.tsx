@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import * as Yup from 'yup';
 
 import {
-  Center,
+  Flex,
   Stack,
   Heading,
   Button,
@@ -19,6 +19,7 @@ import { styles } from './styles';
 
 import Error from '../../components/Error';
 import TextField from '../../components/Auth/TextField';
+import GoogleButton from '../../components/Auth/GoogleButton';
 
 interface LoginProps {}
 
@@ -39,7 +40,7 @@ const Login: React.FC<LoginProps> = () => {
   }
 
   return (
-    <Center>
+    <Flex align={'center'} justify={'center'}>
       <Stack>
         <StackItem alignSelf='center'>
           <Heading {...styles.heading}>Sign in to your account</Heading>
@@ -105,6 +106,7 @@ const Login: React.FC<LoginProps> = () => {
                 >
                   Sign in
                 </Button>
+                <GoogleButton />
               </Form>
             )}
           </Formik>
@@ -115,7 +117,7 @@ const Login: React.FC<LoginProps> = () => {
           </Wrap>
         </Stack>
       </Stack>
-    </Center>
+    </Flex>
   );
 };
 

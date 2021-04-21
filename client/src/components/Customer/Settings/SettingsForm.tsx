@@ -121,9 +121,10 @@ const SettingsForm: React.FC<SettingsFormProps> = () => {
               <Button
                 mt={5}
                 mb={5}
-                colorScheme='green'
+                colorScheme='blue'
                 isLoading={props.isSubmitting}
                 type='submit'
+                isFullWidth
               >
                 Save
               </Button>
