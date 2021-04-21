@@ -15,7 +15,6 @@ import { Link } from 'react-router-dom';
 import { useAuth } from '../providers/AuthProvider';
 import { AiOutlineLogin } from 'react-icons/ai';
 
-import Navbar from '../components/Navbar';
 import Landing from './Customer/Landing';
 import Features from '../components/Home/Features';
 import Wave from 'react-wavify';
@@ -35,7 +34,6 @@ const Home: React.FC<HomeProps> = () => {
   const { currentUser }: any = useAuth();
   return (
     <>
-      <Navbar />
       {!currentUser ? (
         <>
           <Center>

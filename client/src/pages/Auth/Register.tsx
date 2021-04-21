@@ -10,6 +10,7 @@ import { styles } from './styles';
 
 import Error from '../../components/Error';
 import TextField from '../../components/Auth/TextField';
+import GoogleButton from '../../components/Auth/GoogleButton';
 
 interface FormValues {
   name: string;
@@ -98,7 +99,7 @@ const Register: React.FC<RegisterProps> = () => {
                 </Field>
                 <Button
                   mt={5}
-                  mb={7}
+                  mb={4}
                   width='100%'
                   colorScheme='blue'
                   isLoading={props.isSubmitting}
@@ -106,6 +107,7 @@ const Register: React.FC<RegisterProps> = () => {
                 >
                   Sign up
                 </Button>
+                <GoogleButton />
               </Form>
             )}
           </Formik>
