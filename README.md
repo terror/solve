@@ -1,21 +1,21 @@
-## solve
+## <p align='center'>solve</p>
 
-A ~~fully~~ featured competitive programming workspace in the cloud
-
-Deployed to Heroku: https://solve-web.herokuapp.com/
+<p align='center'>
+  A <strike>fully</strike> featured competitive programming workspace in the cloud<br/>
+  Deployed to Heroku: <a href='https://solve-web.herokuapp.com/' target="_blank">https://solve-web.herokuapp.com/</a>
+<p>
 
 ## Features
-- User Authentication
+- User authentication
 - Parse contest problems
-- Share solutions (todo)
 - Upload code templates
 - Save workspace state
-- Run code against sample test cases before submitting
+- Run code against sample problem test cases
 
 ## Stack
-- React + Typescript (Frontend)
-- Node + Express + Firebase (Backend)
-- Firebase Auth for user authentication
+- React (Frontend)
+- Node + Express (API)
+- Firebase (Database)
 
 ## Development
 See [CONTRIBUTING.md](https://github.com/terror/solve/tree/master/CONTRIBUTING.md) for more information.
